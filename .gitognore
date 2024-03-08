@@ -1,0 +1,4 @@
+.env 
+says_env
+__pycache__
+migrations

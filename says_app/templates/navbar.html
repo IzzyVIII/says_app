@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand link-light" href="/"><strong>S.A.Y.S</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav link-light">
+          <a class="nav-link link-light active" aria-current="page" href="/">Home</a>
+          <a class="nav-link link-light" href="/about">About</a>
+          <a class="nav-link link-light" href="/resources">Resources</a>
+          <a class="nav-link link-light" href="#">Events</a>
+          <a class="nav-link link-light"><strong>Suicide and Crisis Lifeline - DIAL: 988</strong></a>
+        </div>
+        <div class="navbar-nav link-light ms-auto">
+          {% if current_user.is_authenticated %}
+          <li class="nav-item me-auto">
+            <a class="nav-link link-light" href="/logout">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item me-auto">
+            <a class="nav-link link-light" href="/signin">Login</a>
+          </li>
+          <li class="nav-item me-auto">
+            <a class="nav-link link-light" href="/signup">Register</a>
+          </li>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </nav>
