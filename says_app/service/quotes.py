@@ -8,7 +8,7 @@ class QuotesService:
         querystring = {"token":"ipworld.info"}
 
         headers = {
-            "X-RapidAPI-Key": "eef55b325bmsh1305927ed1bb23fp1557f3jsn2558bca4e9a8",
+            "X-RapidAPI-Key": "a545654756msh41215968af0133ap15acf5jsneb67a6cb1e2e",
             "X-RapidAPI-Host": "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com"
         }
 
