@@ -17,8 +17,9 @@
                 Most importantly a place to reach out and ask for help,<br>
                 or reach out and offer help to a fellow first responder. </h3>
         </div>
-      
     </div>
+
+    {% if current_user.is_authenticated %}
     <div class="col d-flex justify-content-center">
         <h4 class="row"><u>Inspirational & Motivational Quote of the Day:</u></h4>
     </div>
@@ -26,7 +27,6 @@
         <h4 class="row">{{quote['text']}}</h4>
     </div>
 
-    {% if current_user.is_authenticated %}
     <div class="row">
         <h1 class="fs-3 text">Start a New Post Here</h1>
         <form accept="/" method="post">
@@ -54,6 +54,8 @@
                 <strong class="d-block text-gray-dark"> <a href="/topic/{{item.id}}"> {{item.title}}</a></strong>                 
                 {{item.description}}
               </p>
+              <a href="{{ url_for('site.delete', id=item.id )}}" class="card-link btn btn-danger">Delete
+                Product</a>
             </div>
            
             {% endfor %}
@@ -64,35 +66,6 @@
     {% endif %}
 </div>
 
-
-<!-- <div class="row">
-    <h1 class="my-4 fs-4 text">S.A.Y.S Discussion Forum</h1>
-    <div class="my-3 p-3 bg-body rounded shadow-sm link-light">
-
-        <div class="d-flex text-body-secondary pt-3">
-          <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-          <p class="pb-3 mb-0 small lh-sm border-bottom">
-          </p>
-        </div>
-       
-    </div>
-    <h1 class="fs-4 text">Add a comment</h1>
-    <form  accept="/" method="post" action="">
-        <div class="mb-3">
-            <label for="title" class="form-label">Comment</label>
-            <input type="text" name="comment" class="form-control" id="comment" aria-describedby="comment">
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <input type="text" name="description" class="form-control " id="description">
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-
-
-</div> -->
 {% endblock content %}
 
 

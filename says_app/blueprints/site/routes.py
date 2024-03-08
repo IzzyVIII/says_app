@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, redirect, render_template, request
 from says_app.models import Post, db
 from says_app.service.quotes import QuotesService
 
@@ -35,6 +35,13 @@ def resources():
 def events():
     return render_template("events.html")
 
+@site.route("/post/delete/<id>")
+def delete(id):
+    post=Post.query.get(id)
+    db.session.delete(post)
+    db.session.commit()
+
+    return redirect("/")
 
 # @site.route("/post", methods=["GET", "POST"]) #*******Put in BLUEPRINTS....... in routes???*******
 # def post(id):
