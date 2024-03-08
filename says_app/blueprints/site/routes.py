@@ -31,6 +31,11 @@ def about():
 def resources():
     return render_template("resources.html")
 
+@site.route("/events", methods=["GET", "POST"])
+def events():
+    return render_template("events.html")
+
+
 # @site.route("/post", methods=["GET", "POST"]) #*******Put in BLUEPRINTS....... in routes???*******
 # def post(id):
 #     if request.method == "POST":

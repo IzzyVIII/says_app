@@ -6,6 +6,7 @@ from config import Config
 from .blueprints.site.routes import site
 from .models import login_manager, db
 from .blueprints.auth.routes import auth
+#from .blueprints.api.routes import api 
 
 app=Flask(__name__)
 app.config.from_object(Config)
@@ -21,6 +22,7 @@ login_manager.login_message_category = 'warning'
 
 app.register_blueprint(site)
 app.register_blueprint(auth)
+#app.register_blueprint(api)
 
 
 db.init_app(app)
